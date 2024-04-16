@@ -1,1 +1,21 @@
-
+.image-container {
+    position: relative;
+    height: 500px; /* Adjust height as needed */
+    overflow: hidden;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .image-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1;
+  }
