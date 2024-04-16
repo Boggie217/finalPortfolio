@@ -1,24 +1,73 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import AboutMe from './components/AboutMe';
+import Projects from './components/Projects';
+import Contact from './components/contact';
+import BlogPage from './components/blog';
+import Footer from './components/footer';
+import Home from './components/Home';
+import ModeToggle from './components/ModeToggle';
+import BugFixes from './components/bugFixes';
+
+
+
+
+
+
 
 function App() {
+  const [mode, setMode] = useState('standard');
+
+  const handleModeChange = (newMode) => {
+    setMode(newMode);
+  };
+
+  const getBackgroundColor = () => {
+    switch (mode) {
+      case 'standard':
+        return 'white';
+      case 'dark':
+        return '#333';
+      case 'light':
+        return '#f5f5f5';
+      default:
+        return 'white';
+    }
+  };
+
+  const getTextColor = () => {
+    return mode === 'dark' ? 'white' : 'black';
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Router basename="/my-portfolio-2024">
+      <div className="App">
+        <Navbar />
+        <header
+          className="App-header"
+          style={{
+            backgroundColor: getBackgroundColor(),
+            color: getTextColor(),
+            minHeight: '100vh',
+            padding: '1rem',
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Routes>
+          <Route path="/AboutMe" element={<AboutMe />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/bugFixes" element={<BugFixes />} />
+          </Routes>
+           <ModeToggle mode={mode} onModeChange={handleModeChange} />
+          
+        </header><Footer />
+      </div>
+    </Router>
   );
 }
 
