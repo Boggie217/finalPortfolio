@@ -24,7 +24,7 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://github.com/Boggie217/finalPortfolio/tree/gh-pages",
+  "homepage": "https://Boggie217.github.io/finalPortfolio",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
