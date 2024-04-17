@@ -27,7 +27,7 @@
   "homepage": "https://Boggie217.github.io/finalPortfolio",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "BABEL_ENV=production  react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
