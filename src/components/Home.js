@@ -34,7 +34,7 @@ const Home = () => {
           <div className="col-md-4 d-flex justify-content-end">
             <img
               src={ProfilePicture}
-              alt="Profile Picture"
+              alt=''
               className="img-fluid rounded"
               style={{ width: '300px', height: '300px', objectFit: 'cover' }}
             />
