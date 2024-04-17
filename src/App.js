@@ -43,7 +43,7 @@ function App() {
   };
 
   return (
-    <Router basename="/my-portfolio-2024">
+    <Router basename="/finalPortfolio">
       <div className="App">
         <Navbar />
         <header
