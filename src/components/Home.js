@@ -1,4 +1,4 @@
-import React from 'react';
+
 import ProjectCarousel from './Carousel';
 import ProfilePicture from './ProfilePicture.jpg';
 import CV from './bradCV.pdf';
